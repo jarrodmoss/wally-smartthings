@@ -112,6 +112,7 @@ def pollChildren() {
           d.sendEvent(name: "humidity", value: stat.state.RH.value)
           if(lastUpdated <= 30) {
             d.sendEvent(name: "temperature", value: stat.state.TEMP.value * 1.8 + 32)
+            d.sendEvent(name: "lastUpdate", value: lastUpdate)
             //sendPush("test message wally")
           } else {
             d.sendEvent(name: "temperature", value: null)

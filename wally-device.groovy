@@ -19,6 +19,7 @@ metadata {
 		capability "Relative Humidity Measurement"
     capability "Polling"
     capability "Refresh"
+	attribute "lastUpdate", "number"
 	}
 
   simulator { }
@@ -39,6 +40,10 @@ metadata {
 
 		valueTile("humidity", "device.humidity", inactiveLabel: false) {
 			state "humidity", label:'${currentValue}% humidity', unit:""
+		}
+
+		valueTile("last update", "device.lastUpdate", inactiveLabel: false) {
+			state "last update", label:'${currentValue} minutes', unit:""
 		}
 
     standardTile("refresh", "device.refresh", inactiveLabel: false, decoration: "flat") {
