@@ -42,8 +42,8 @@ metadata {
 			state "humidity", label:'${currentValue}% humidity', unit:""
 		}
 
-		valueTile("last update", "device.lastUpdate", inactiveLabel: false) {
-			state "last update", label:'${currentValue} minutes', unit:""
+		valueTile("lastUpdate", "device.lastUpdate", inactiveLabel: false) {
+			state "last update", label:'${currentValue} min ago', unit:""
 		}
 
     standardTile("refresh", "device.refresh", inactiveLabel: false, decoration: "flat") {
@@ -51,7 +51,7 @@ metadata {
 		}
 
 		main "temperature", "humidity"
-		details(["temperature","humidity","refresh"])
+		details(["temperature","humidity","refresh", "lastUpdate"])
 	}
 }
 
